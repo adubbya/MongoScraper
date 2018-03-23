@@ -31,18 +31,18 @@ var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoScraper";
 mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI);
 
-
+/* index.html, handlebars later
 // Cfg handlebars and routing
 var exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
-/*
+
 var routes = require("./controllers/controller.js");
 
 app.use(routes);
 */
-// Test Routes locally first
+// Test Routes locally first before moving to /routes
 app.get("/scrape", function (req, res) {
     // First, we grab the body of the html with request
     axios.get("https://www.nytimes.com/").then(function (response) {
@@ -79,6 +79,20 @@ app.get("/scrape", function (req, res) {
     });
 });
 
+
+// Route for getting all Articles from the db
+app.get("/articles", function(req, res) {
+    // Grab every document in the Articles collection
+    db.Article.find({})
+      .then(function(dbArticle) {
+        // If we were able to successfully find Articles, send them back to the client
+        res.json(dbArticle);
+      })
+      .catch(function(err) {
+        // If an error occurred, send it to the client
+        res.json(err);
+      });
+  });
 
 
 app.listen(PORT, function () {
