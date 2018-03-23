@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>MongoScraper</title>
+    <meta charset="UTF-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <style>
+        body { background-color: #333f48 }
+        #wrapper {
+          color: #fff;
+          width: 960px;
+          margin-left: auto;
+          margin-right: auto;
+          padding-top: 5%;
+        }
+        #articles {
+          color: #fff;
+          display: inline-block;
+          overflow: auto;
+          width: 60%;
+          height: 700px;
+        }
+        #notes {
+          color: #fff;
+          float: right;
+          width: 30%;
+        }
+        textarea, input {
+          color: #fff;
+          display: block;
+          width: 100%;
+          background-color: #333f48;
+        }
+        input {
+          height: 36px;
+          font-size: 24px;
+        }
+        textarea {
+          height: 200px;
+          font-size: 18px;
+        }
+      </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <h1>Note Scraper</h1>
+        <h2>
+            <i>Articles</i>
+        </h2>
+        <div id="articles"></div>
+        <h2>
+            <i>Notes</i>
+        </h2>
+        <div id="notes"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="/assets/js/app.js"></script>
+</body>
+
+</html>
